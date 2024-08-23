@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Logger from "@/lib/Logger";
 import Console from "@/components/Console";
+import { LoggerProvider } from "@/context/LoggerContext";
+import LoggerService from "@/lib/LoggerService";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -42,11 +43,12 @@ const CanvasWrapper: any = ({ children }: any) => {
 
 export const Default: Story = {
   render: () => {
-    Logger.log("Default canvas mounted");
     return (
-      <CanvasWrapper>
-        <Console />
-      </CanvasWrapper>
+      <LoggerProvider>
+        <CanvasWrapper>
+          <Console />
+        </CanvasWrapper>
+      </LoggerProvider>
     );
   }
 };

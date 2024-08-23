@@ -1,35 +1,26 @@
 import React, { useEffect, useRef } from "react";
 import Header from "@/components/Console/Header";
 import Display from "@/components/Console//Display";
+import useLogger from "@/hooks/useLogger";
+import LoggerService from "@/lib/LoggerService";
 
 interface TerminalProps {
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setMessages: React.Dispatch<
-    React.SetStateAction<Array<{ method: string; message: string }>>
-  >;
-  messages: any[];
   input: string;
   setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Terminal = ({
-  setIsVisible,
-  setMessages,
-  messages,
-  input,
-  setInput
-}: TerminalProps) => {
+const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
   };
+  const { messages } = useLogger();
 
   const displayRef = useRef<HTMLDivElement | null>(null);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      setMessages((prevMessages) => {
-        return [...prevMessages, { method: "log", message: input }];
-      });
+      LoggerService.log("This is a log message.");
       setInput("");
       if (displayRef.current) {
         displayRef.current.scrollTop = displayRef.current.scrollHeight;
@@ -42,7 +33,6 @@ const Terminal = ({
       displayRef.current.scrollTop = displayRef.current.scrollHeight;
     }
   }, [messages]);
-  console.log(messages);
 
   return (
     <div className="absolute bottom-10 w-full px-4 max-w-full min-h-20 max-h-40 h-full mx-auto">
