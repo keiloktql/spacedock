@@ -29,6 +29,7 @@
     "@storybook/test": "^8.2.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "prettier": "^3.3.3",
     "rollup": "^4.21.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -43,6 +44,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
