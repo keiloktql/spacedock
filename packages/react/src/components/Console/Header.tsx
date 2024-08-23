@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from "@/shadcn/ui/Dialog";
-import Settings from "./Settings";
+import Settings from "@/components/Settings";
 import { PANOLOG_DOC_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -46,24 +46,24 @@ const Header = ({ setIsVisible }: HeaderProps) => {
         <Separator className="bg-slate-500 mx-2" orientation="vertical" />
         <Tooltip>
           <Dialog>
-            <Button
-              variant="ghost"
-              className="text-slate-300 hover:text-slate-500"
-              size="smIcon"
-            >
-              <DialogTrigger asChild>
+            <DialogTrigger asChild>
+              <Button
+                variant="ghost"
+                className="text-slate-300 hover:text-slate-500"
+                size="smIcon"
+              >
                 <TooltipTrigger asChild>
                   <SettingsIcon className="w-4 h-4" />
                 </TooltipTrigger>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogTitle>Settings</DialogTitle>
-                <Settings />
-              </DialogContent>
-              <TooltipContent>
-                <p className="text-xs">Settings</p>
-              </TooltipContent>
-            </Button>
+                <TooltipContent>
+                  <p className="text-xs">Settings</p>
+                </TooltipContent>
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogTitle>Settings</DialogTitle>
+              <Settings />
+            </DialogContent>
           </Dialog>
         </Tooltip>
         <Tooltip>

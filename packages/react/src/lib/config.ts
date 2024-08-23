@@ -14,6 +14,7 @@ const HOST_URLS: IHostUrl = {
   DEV: `http://localhost:${PORT}`
 };
 export const HOST_URL = HOST_URLS[ENVIRONMENT];
+export const VERSION = "0.0.1-BETA";
 
 // URL
 export const PANOLOG_DOC_URL = `${HOST_URL}/docs`;
