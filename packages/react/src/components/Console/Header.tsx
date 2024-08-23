@@ -1,8 +1,17 @@
-import { Button } from "@/shadcn/ui/Button";
+import { Button, buttonVariants } from "@/shadcn/ui/Button";
 import { Separator } from "@/shadcn/ui/Separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/ui/Tooltip";
-import { BookOpenText, Settings, X } from "lucide-react";
+import { BookOpenText, Settings as SettingsIcon, X } from "lucide-react";
 import React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger
+} from "@/shadcn/ui/Dialog";
+import Settings from "./Settings";
+import { PANOLOG_DOC_URL } from "@/lib/config";
+import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,10 +23,17 @@ const Header = ({ setIsVisible }: HeaderProps) => {
       <p className="w-full text-xs font-semibold text-slate-300">Panalog</p>
       <span className="flex justify-end items-center w-full h-5">
         <Tooltip>
-          <Button
-            variant="ghost"
-            className="text-slate-300 hover:text-slate-500"
-            size="smIcon"
+          <a
+            className={cn(
+              buttonVariants({
+                variant: "ghost",
+                size: "smIcon",
+                className: "text-slate-300 hover:text-slate-500"
+              })
+            )}
+            href={PANOLOG_DOC_URL}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <TooltipTrigger asChild>
               <BookOpenText className="w-4 h-4" />
@@ -25,22 +41,30 @@ const Header = ({ setIsVisible }: HeaderProps) => {
             <TooltipContent>
               <p className="text-xs">Open Documentation</p>
             </TooltipContent>
-          </Button>
+          </a>
         </Tooltip>
         <Separator className="bg-slate-500 mx-2" orientation="vertical" />
         <Tooltip>
-          <Button
-            variant="ghost"
-            className="text-slate-300 hover:text-slate-500"
-            size="smIcon"
-          >
-            <TooltipTrigger asChild>
-              <Settings className="w-4 h-4" />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p className="text-xs">Settings</p>
-            </TooltipContent>
-          </Button>
+          <Dialog>
+            <Button
+              variant="ghost"
+              className="text-slate-300 hover:text-slate-500"
+              size="smIcon"
+            >
+              <DialogTrigger asChild>
+                <TooltipTrigger asChild>
+                  <SettingsIcon className="w-4 h-4" />
+                </TooltipTrigger>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogTitle>Settings</DialogTitle>
+                <Settings />
+              </DialogContent>
+              <TooltipContent>
+                <p className="text-xs">Settings</p>
+              </TooltipContent>
+            </Button>
+          </Dialog>
         </Tooltip>
         <Tooltip>
           <Button
