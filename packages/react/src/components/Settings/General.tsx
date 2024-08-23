@@ -1,5 +1,4 @@
 import { VERSION } from "@/lib/config";
-import React from "react";
 import { Input } from "@/shadcn/ui/Input";
 import { Label } from "@/shadcn/ui/Label";
 

@@ -1,8 +1,9 @@
 import { Separator } from "@/shadcn/ui/Separator";
 import { SidebarNav } from "@/components/Settings/SidebarNav";
 import { useSettings } from "@/context/SettingsContext";
-import Appearance from "@/components/Settings/Appearance";
+import Display from "@/components/Settings/Display";
 import General from "@/components/Settings/General";
+import { DialogTitle } from "@/shadcn/ui/Dialog";
 
 const sidebarNavItems = [
   {
@@ -10,8 +11,8 @@ const sidebarNavItems = [
     href: "general"
   },
   {
-    title: "Appearance",
-    href: "appearance"
+    title: "Display",
+    href: "display"
   }
 ];
 
@@ -21,16 +22,17 @@ export default function Settings({}: SettingsLayoutProps) {
   const { pathname, setPathname } = useSettings();
 
   const renderSettingsContent = () => {
-    if (pathname === "appearance") {
-      return <Appearance />;
+    if (pathname === "display") {
+      return <Display />;
     }
     return <General />;
   };
 
   return (
     <div className="pb-16">
-      <Separator />
-      <div className="flex mt-4 flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
+      <DialogTitle>Settings</DialogTitle>
+      <Separator className="my-4" />
+      <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
         <aside className="-mx-4 lg:w-1/5">
           <SidebarNav
             items={sidebarNavItems}

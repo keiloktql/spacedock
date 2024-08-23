@@ -60,8 +60,7 @@ const Header = ({ setIsVisible }: HeaderProps) => {
                 </TooltipContent>
               </Button>
             </DialogTrigger>
-            <DialogContent>
-              <DialogTitle>Settings</DialogTitle>
+            <DialogContent className="max-w-[800px] w-[90vw] h-full max-h-[85vh]">
               <Settings />
             </DialogContent>
           </Dialog>

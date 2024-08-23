@@ -13,14 +13,15 @@ const useLogger = () => {
   );
 
   useEffect(() => {
-    const handleNewLog = (newMessages: LogMessage[]) => {
+    const handleNewLog = (event: CustomEvent<LogMessage[]>) => {
+      const newMessages = event.detail;
       setMessages([...newMessages]);
     };
 
-    eventEmitter.on("new-log", handleNewLog as (...args: any[]) => void);
+    eventEmitter.on("new-log", handleNewLog as EventListener);
 
     return () => {
-      eventEmitter.off("new-log", handleNewLog as (...args: any[]) => void);
+      eventEmitter.off("new-log", handleNewLog as EventListener);
     };
   }, []);
 

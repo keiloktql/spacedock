@@ -20,7 +20,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      LoggerService.log("This is a log message.");
+      LoggerService.terminalLog(`$ ${input}`);
       setInput("");
       if (displayRef.current) {
         displayRef.current.scrollTop = displayRef.current.scrollHeight;

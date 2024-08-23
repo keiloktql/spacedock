@@ -17,7 +17,6 @@ export function SidebarNav({
   setPathname,
   ...props
 }: SidebarNavProps) {
-  console.log(pathname);
   return (
     <nav
       className={cn(

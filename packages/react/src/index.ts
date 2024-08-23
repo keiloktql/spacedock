@@ -1,7 +1,4 @@
-import Console from "./components/Console";
-import "./styles/global.css";
-
-import * as dotenv from "dotenv";
-dotenv.config();
+import Console from "@/components/Console";
+import "@/styles/global.css";
 
 export default Console;

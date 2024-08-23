@@ -2,6 +2,10 @@ import * as React from "react";
 
 import { cn, copyToClipboard } from "@/lib/utils";
 import { VERSION } from "@/lib/config";
+import { Copy } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/ui/Tooltip";
+import { useToast } from "@/shadcn/ui/Toast/use-toast";
+import { Toaster } from "@/shadcn/ui/Toast/toaster";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -10,8 +14,19 @@ export interface InputProps
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, copyable = false, ...props }, ref) => {
+    const { toast } = useToast();
+
+    const handleCopy = () => {
+      copyToClipboard(VERSION);
+      toast({
+        title: "Success!",
+        description: "Copied to Clipboard!"
+      });
+    };
+
     return (
       <div className="relative flex items-center">
+        <Toaster />
         <input
           type={type}
           className={cn(
@@ -22,13 +37,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
         {copyable && (
-          <button
-            type="button"
-            onClick={() => copyToClipboard(VERSION)}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs font-medium px-2 py-1 rounded bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600"
-          >
-            Copy
-          </button>
+          <Tooltip>
+            <button
+              type="button"
+              onClick={() => handleCopy()}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs font-medium rounded bg-slate-100 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600"
+            >
+              <span className="sr-only">Copy</span>
+              <TooltipTrigger asChild>
+                <Copy className="h-8 w-8 p-2 text-slate-500" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className="text-xs">Copy to Clipboard</p>
+              </TooltipContent>
+            </button>
+          </Tooltip>
         )}
       </div>
     );

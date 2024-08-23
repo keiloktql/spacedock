@@ -1,12 +1,19 @@
 import eventEmitter from "@/lib/eventEmitter";
 
 interface LogMessage {
-  method: "log" | "error" | "warn" | "info";
+  method?: "log" | "error" | "warn" | "info";
   message: string;
 }
 
 class LoggerService {
   private static messages: LogMessage[] = [];
+
+  static terminalLog(message: string) {
+    const logMessage: LogMessage = { message };
+    this.messages.push(logMessage);
+    console.log(message);
+    eventEmitter.emit("new-log", this.messages);
+  }
 
   static log(message: string) {
     const logMessage: LogMessage = { method: "log", message };

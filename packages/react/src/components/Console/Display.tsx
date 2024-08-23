@@ -13,7 +13,8 @@ const Display = forwardRef<HTMLDivElement, DisplayProps>(
             key={index}
             className={`text-xs font-mono ${msg.method === "error" ? "text-red-400" : ""}`}
           >
-            <strong>{msg.method.toUpperCase()}:</strong> {msg.message}
+            {msg.method && <strong>{msg.method?.toUpperCase()}:</strong>}
+            {msg.message}
           </div>
         ))}
       </div>
