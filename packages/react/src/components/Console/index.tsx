@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "@/components/Console/Header";
 import {
   Tooltip,
   TooltipContent,
@@ -15,6 +14,7 @@ interface ConsoleProps {}
 const Console = (props: ConsoleProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [messages, setMessages] = useState(Logger.getMessages());
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +26,7 @@ const Console = (props: ConsoleProps) => {
 
   return (
     <div className="relative w-full h-full">
-      <TooltipProvider>
+      <TooltipProvider delayDuration={100}>
         <Tooltip>
           <button
             onClick={() => setIsVisible(!isVisible)}
@@ -42,7 +42,13 @@ const Console = (props: ConsoleProps) => {
         </Tooltip>
 
         {!isVisible && (
-          <Terminal setIsVisible={setIsVisible} messages={messages} />
+          <Terminal
+            setIsVisible={setIsVisible}
+            setMessages={setMessages}
+            messages={messages}
+            input={input}
+            setInput={setInput}
+          />
         )}
       </TooltipProvider>
     </div>
