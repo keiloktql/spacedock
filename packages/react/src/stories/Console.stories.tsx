@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Console from "@/components/Console";
-import { LoggerProvider } from "@/context/LoggerContext";
 import LoggerService from "@/lib/LoggerService";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -25,6 +24,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const CanvasWrapper: any = ({ children }: any) => {
+  LoggerService.log("This should run.");
   return (
     <div className="relative w-full h-screen bg-gray-100 p-4">
       <div className="relative w-full h-full bg-white border border-gray-300">
@@ -43,12 +43,11 @@ const CanvasWrapper: any = ({ children }: any) => {
 
 export const Default: Story = {
   render: () => {
+    LoggerService.error("This should not run.");
     return (
-      <LoggerProvider>
-        <CanvasWrapper>
-          <Console />
-        </CanvasWrapper>
-      </LoggerProvider>
+      <CanvasWrapper>
+        <Console />
+      </CanvasWrapper>
     );
   }
 };

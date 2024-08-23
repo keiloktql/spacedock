@@ -17,10 +17,10 @@ const useLogger = () => {
       setMessages([...newMessages]);
     };
 
-    eventEmitter.on("new-log", handleNewLog);
+    eventEmitter.on("new-log", handleNewLog as (...args: any[]) => void);
 
     return () => {
-      eventEmitter.off("new-log", handleNewLog);
+      eventEmitter.off("new-log", handleNewLog as (...args: any[]) => void);
     };
   }, []);
 
