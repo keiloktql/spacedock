@@ -69,13 +69,11 @@ const Header = ({ setIsVisible }: HeaderProps) => {
           <Button
             variant="ghost"
             className="text-slate-300 hover:text-slate-500"
+            onClick={() => setIsVisible((visibility) => !visibility)}
             size="smIcon"
           >
             <TooltipTrigger asChild>
-              <X
-                onClick={() => setIsVisible((visibility) => !visibility)}
-                className="w-4 h-4"
-              />
+              <X className="w-4 h-4" />
             </TooltipTrigger>
             <TooltipContent>
               <p className="text-xs">Close Terminal</p>

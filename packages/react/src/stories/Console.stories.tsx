@@ -43,7 +43,6 @@ const CanvasWrapper: any = ({ children }: any) => {
 
 export const Default: Story = {
   render: () => {
-    LoggerService.error("This should not run.");
     return (
       <CanvasWrapper>
         <Console />
