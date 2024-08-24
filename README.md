@@ -34,7 +34,7 @@ We welcome contributions from the community! If you'd like to contribute to Pano
 - Tham Kei Lok (Lead Engineer) - [LinkedIn](https://www.linkedin.com/in/keiloktql/)
 - Derrick Lim (Software Engineer - Documentation) - [LinkedIn](https://www.linkedin.com/in/derrick-lim-1986b0206/)
 
-**All Contributors**
+
 <a href="https://github.com/keiloktql/panolog/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=keiloktql/panolog" />
 </a>
