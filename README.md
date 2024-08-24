@@ -30,14 +30,13 @@ For detailed documentation on how to use Panolog, including setup instructions, 
 
 We welcome contributions from the community! If you'd like to contribute to Panolog, please follow our [contributing guidelines](https://github.com/keiloktql/panolog/blob/main/CONTRIBUTING.md).
 
-**Core Team:**
-- Tham Kei Lok (Lead Engineer) - [LinkedIn](https://www.linkedin.com/in/keiloktql/)
-- Derrick Lim (Software Engineer - Documentation) - [LinkedIn](https://www.linkedin.com/in/derrick-lim-1986b0206/)
-
-
 <a href="https://github.com/keiloktql/panolog/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=keiloktql/panolog" />
 </a>
+
+**Core Team:**
+- Tham Kei Lok (Lead Engineer) - [LinkedIn](https://www.linkedin.com/in/keiloktql/)
+- Derrick Lim (Software Engineer - Documentation) - [LinkedIn](https://www.linkedin.com/in/derrick-lim-1986b0206/)
 
 ## License
 
