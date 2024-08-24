@@ -14,3 +14,10 @@ const HOST_URLS: IHostUrl = {
   DEV: `http://localhost:${PORT}`
 };
 export const HOST_URL = HOST_URLS[ENVIRONMENT];
+
+// REGEX
+export const EMAIL_INCLUDED_REGEX =
+  /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
+export const HTTPS_INCLUDED_REGEX = /(https?:\/\/\S+)/gi;
+export const EMAIL_OR_HTTPS_INCLUDED_REGEX =
+  /(https?:\/\/\S+|[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;

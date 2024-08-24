@@ -47,7 +47,7 @@ const Footer = () => (
     {/* Bottom */}
     <div className="flex flex-col md:flex-row md:justify-between pb-8 pt-4 max-w-screen-xl mx-auto">
       <p className="text-gray-500 font-medium text-xs">
-        2024 Tham Kei Lok. All rights reserved.
+        Copyright &copy; 2024 Tham Kei Lok. All rights reserved.
       </p>
       <span className="flex">
         <p className="text-gray-500 font-medium text-xs">
