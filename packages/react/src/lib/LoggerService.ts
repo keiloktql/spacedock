@@ -1,14 +1,21 @@
 import eventEmitter from "@/lib/eventEmitter";
 
-interface LogMessage {
-  method?: "log" | "error" | "warn" | "info";
+export interface LogMessage {
+  method?: "log" | "error" | "warn" | "info" | "systemMessage";
   message: string;
 }
 
 class LoggerService {
   private static messages: LogMessage[] = [];
 
-  static terminalLog(message: string) {
+  // Static initialization block to add a welcome message
+  static {
+    LoggerService.systemMessage(`Welcome to the Panolog!
+Panolog is a browser-based shell with the Panolog CLI pre-installed.
+`);
+  }
+
+  static systemMessage(message: string) {
     const logMessage: LogMessage = { message };
     this.messages.push(logMessage);
     console.log(message);

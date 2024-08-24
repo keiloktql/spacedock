@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import eventEmitter from "@/lib/eventEmitter";
-import LoggerService from "@/lib/LoggerService";
-
-interface LogMessage {
-  method: "log" | "error" | "warn" | "info";
-  message: string;
-}
+import LoggerService, { LogMessage } from "@/lib/LoggerService";
 
 const useLogger = () => {
   const [messages, setMessages] = useState<LogMessage[]>(

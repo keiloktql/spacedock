@@ -22,7 +22,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      LoggerService.terminalLog(`$ ${input}`);
+      LoggerService.systemMessage(`$ ${input}`);
       setInput("");
       scrollToBottom();
     }

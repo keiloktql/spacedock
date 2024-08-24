@@ -6,6 +6,7 @@ import React from "react";
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogTitle,
   DialogTrigger
 } from "@/shadcn/ui/Dialog";
@@ -62,6 +63,11 @@ const Header = ({ setIsVisible }: HeaderProps) => {
             </DialogTrigger>
             <DialogContent className="max-w-[800px] w-[90vw] h-full max-h-[85vh]">
               <Settings />
+              <DialogFooter className="items-end sm:justify-center">
+                <p className="text-gray-500 font-medium text-xs">
+                  Made with ❤️ in Singapore.
+                </p>
+              </DialogFooter>
             </DialogContent>
           </Dialog>
         </Tooltip>
