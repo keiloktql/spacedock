@@ -29,7 +29,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
   };
 
   const handleTerminalClick = () => {
-    inputRef.current?.focus(); // Focus the input field
+    inputRef.current?.focus();
   };
 
   const scrollToBottom = () => {
@@ -46,7 +46,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
   };
 
   useEffect(() => {
-    scrollToBottom(); // Scroll to the bottom when messages change
+    scrollToBottom();
   }, [messages]);
 
   return (
