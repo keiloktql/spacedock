@@ -1,5 +1,7 @@
 # Panolog
 
+> This project is still in development. Not production friendly.
+
 A better and wider way to console.log. **Panolog** is a versatile logging tool designed to enhance your debugging and monitoring experience with a variety of customizable and advanced features. Currently available on React based projects only.
 
 ## Installation
