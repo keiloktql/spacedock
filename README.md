@@ -5,7 +5,7 @@ A better and wider way to console.log. **Panolog** is a versatile logging tool d
 ## Installation
 
 ```
-$ npm install --save @panolog/react
+$ npm i -D @panolog/react
 ```
 
 ## Features
@@ -20,7 +20,7 @@ $ npm install --save @panolog/react
 - **Color Coding** 🎨: Customizable color schemes for logs. WIP
 - **Customizable Hotkey** ⌨️: Set up your preferred hotkeys for the terminal. WIP
 - **Themes** 🌈: Choose from or create custom themes. WIP
-- - **Mobile Support** 📱: Responsive design or dedicated mobile app. WIP
+- **Mobile Support** 📱: Responsive design or dedicated mobile app. WIP
 
 ## Documentation
 
@@ -34,7 +34,10 @@ We welcome contributions from the community! If you'd like to contribute to Pano
 - Tham Kei Lok (Lead Engineer) - [LinkedIn](https://www.linkedin.com/in/keiloktql/)
 - Derrick Lim (Software Engineer - Documentation) - [LinkedIn](https://www.linkedin.com/in/derrick-lim-1986b0206/)
 
-![Contributors Graph](https://github.com/keiloktql/panolog/graphs/contributors)
+**All Contributors**
+<a href="https://github.com/keiloktql/panolog/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=keiloktql/panolog" />
+</a>
 
 ## License
 
