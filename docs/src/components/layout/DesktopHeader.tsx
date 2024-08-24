@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { isEq } from "@/lib/utils";
+import { CommandMenu } from "@/components/shared/Command/CommandMenu";
 
 const DesktopHeader = () => {
   const router = useRouter();
@@ -23,6 +24,9 @@ const DesktopHeader = () => {
           FAQ
         </Link>
       </span>
+      <div className="w-full md:w-auto md:flex-none">
+        <CommandMenu />
+      </div>
     </nav>
   );
 };
