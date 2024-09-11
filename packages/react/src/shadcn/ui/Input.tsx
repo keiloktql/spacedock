@@ -4,7 +4,7 @@ import { cn, copyToClipboard } from "@/lib/utils";
 import { VERSION } from "@/lib/config";
 import { Copy } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/ui/Tooltip";
-import { useToast } from "@/shadcn/ui/Toast/use-toast";
+import { toast } from "@/shadcn/ui/Toast/use-toast";
 import { Toaster } from "@/shadcn/ui/Toast/toaster";
 
 export interface InputProps
@@ -14,8 +14,6 @@ export interface InputProps
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, copyable = false, ...props }, ref) => {
-    const { toast } = useToast();
-
     const handleCopy = () => {
       copyToClipboard(VERSION);
       toast({

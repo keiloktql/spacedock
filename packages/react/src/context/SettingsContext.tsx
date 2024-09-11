@@ -38,10 +38,10 @@ export const useSettings = () => {
 
 export const SettingsProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const storedTheme = localStorage.getItem(
+    const storedTheme = getLocalStorageItem(
       PANOLOG_SETTINGS_THEME_KEY
     ) as Theme | null;
-    return storedTheme ?? "light"; // Default to "light" if no stored value
+    return storedTheme ? JSON.parse(storedTheme) : "dark"; // Default to "dark" if no stored value
   });
   const [pathname, setPathname] = useState("general");
   const [filters, setFilters] = useState<Record<string, boolean>>(() => {
@@ -62,6 +62,10 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     setLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY, filters);
   }, [filters]);
+
+  useEffect(() => {
+    setLocalStorageItem(PANOLOG_SETTINGS_THEME_KEY, theme);
+  }, [theme]);
 
   return (
     <SettingsContext.Provider

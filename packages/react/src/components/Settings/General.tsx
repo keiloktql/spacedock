@@ -13,7 +13,7 @@ import {
   FormItem,
   FormLabel
 } from "@/shadcn/ui/Form";
-import { useToast } from "@/shadcn/ui/Toast/use-toast";
+import { toast } from "@/shadcn/ui/Toast/use-toast";
 import { Button } from "@/shadcn/ui/Button";
 import { useEffect } from "react";
 import { useSettings } from "@/context/SettingsContext";
@@ -28,7 +28,6 @@ const FilterFormSchema = z.object({
 });
 
 const General = (props: Props) => {
-  const { toast } = useToast();
   const { filters, setFilters } = useSettings();
   const filterForm = useForm<z.infer<typeof FilterFormSchema>>({
     resolver: zodResolver(FilterFormSchema),

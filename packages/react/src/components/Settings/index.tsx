@@ -4,6 +4,7 @@ import { useSettings } from "@/context/SettingsContext";
 import Display from "@/components/Settings/Display";
 import General from "@/components/Settings/General";
 import { DialogTitle } from "@/shadcn/ui/Dialog";
+import { Toaster } from "@/shadcn/ui/Toast/toaster";
 
 const sidebarNavItems = [
   {
@@ -30,6 +31,7 @@ export default function Settings({}: SettingsLayoutProps) {
 
   return (
     <div className="pb-16 overflow-auto">
+      <Toaster />
       <DialogTitle>Settings</DialogTitle>
       <Separator className="my-4" />
       <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
