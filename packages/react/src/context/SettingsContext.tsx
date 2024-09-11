@@ -1,4 +1,7 @@
-import { PANOLOG_SETTINGS_FILTER_KEY } from "@/lib/config";
+import {
+  PANOLOG_SETTINGS_FILTER_KEY,
+  PANOLOG_SETTINGS_THEME_KEY
+} from "@/lib/config";
 import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import React, {
   createContext,
@@ -32,7 +35,12 @@ export const useSettings = () => {
 };
 
 export const SettingsProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(() => {
+    const storedTheme = localStorage.getItem(
+      PANOLOG_SETTINGS_THEME_KEY
+    ) as Theme | null;
+    return storedTheme ?? "light"; // Default to "light" if no stored value
+  });
   const [pathname, setPathname] = useState("general");
   const [filters, setFilters] = useState<Record<string, boolean>>(() => {
     const storedFilters = getLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY);
