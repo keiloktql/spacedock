@@ -29,18 +29,18 @@ export default function Settings({}: SettingsLayoutProps) {
   };
 
   return (
-    <div className="pb-16">
+    <div className="pb-16 overflow-auto">
       <DialogTitle>Settings</DialogTitle>
       <Separator className="my-4" />
       <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
-        <aside className="-mx-4 lg:w-1/5">
+        <aside className="lg:w-1/5">
           <SidebarNav
             items={sidebarNavItems}
             pathname={pathname}
             setPathname={setPathname}
           />
         </aside>
-        <div className="flex-1 lg:max-w-2xl">{renderSettingsContent()}</div>
+        <div className="flex-1">{renderSettingsContent()}</div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useSettings } from "@/context/SettingsContext";
 import { LogMessage } from "@/lib/LoggerService";
 import { computeDisplayTextColor, showMethodOrNot } from "@/lib/utils";
 import { forwardRef } from "react";
@@ -8,9 +9,13 @@ interface DisplayProps {
 
 const Display = forwardRef<HTMLDivElement, DisplayProps>(
   ({ messages }, ref) => {
+    const { filters } = useSettings();
+    const filteredMessages = messages.filter(
+      (msg) => filters[msg.method as keyof typeof filters]
+    );
     return (
       <div className="flex flex-col" ref={ref}>
-        {messages.map((msg, index) => {
+        {filteredMessages.map((msg, index) => {
           const lines = msg.message.split("\n");
           return (
             <div

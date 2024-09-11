@@ -1,7 +1,7 @@
 export const WELCOME_MESSAGE = `Welcome to Panolog!
 Panolog is a browser-based shell with the Panolog CLI pre-installed.
 
-View supported Panolog commanmds via \`help\`
+View supported Panolog commands via \`help\`
 `;
 
 export const COMMAND_NOT_FOUND_MESSAGE = (command?: string) => `

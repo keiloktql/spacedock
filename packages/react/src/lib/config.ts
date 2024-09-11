@@ -18,3 +18,6 @@ export const VERSION = "0.0.1-BETA";
 
 // URL
 export const PANOLOG_DOC_URL = `${HOST_URL}/docs`;
+
+// LOCALSTORAGE KEYS
+export const PANOLOG_SETTINGS_FILTER_KEY = "PANOLOG_SETTINGS_FILTER";

@@ -1,4 +1,12 @@
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import { PANOLOG_SETTINGS_FILTER_KEY } from "@/lib/config";
+import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  ReactNode,
+  useEffect
+} from "react";
 
 type Theme = "light" | "dark";
 
@@ -7,6 +15,8 @@ interface SettingsContextType {
   setTheme: (theme: Theme) => void;
   pathname: string;
   setPathname: (pathname: string) => void;
+  filters: Record<string, boolean>;
+  setFilters: (filters: Record<string, boolean>) => void;
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(
@@ -24,10 +34,27 @@ export const useSettings = () => {
 export const SettingsProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("light");
   const [pathname, setPathname] = useState("general");
+  const [filters, setFilters] = useState<Record<string, boolean>>(() => {
+    const storedFilters = getLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY);
+    return storedFilters
+      ? { system: true, user: true, ...JSON.parse(storedFilters) }
+      : {
+          system: true,
+          user: true,
+          log: true,
+          error: true,
+          warn: true,
+          info: true
+        };
+  });
+
+  useEffect(() => {
+    setLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY, filters);
+  }, [filters]);
 
   return (
     <SettingsContext.Provider
-      value={{ theme, setTheme, pathname, setPathname }}
+      value={{ theme, setTheme, pathname, setPathname, filters, setFilters }}
     >
       {children}
     </SettingsContext.Provider>

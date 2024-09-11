@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Header from "@/components/Console/Header";
 import Display from "@/components/Console/Display";
 import useLogger from "@/hooks/useLogger";
-import LoggerService from "@/lib/LoggerService";
+import LoggerService, { InternalLogger } from "@/lib/LoggerService";
 
 interface TerminalProps {
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,7 +22,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      LoggerService.user(`$ ${input}`);
+      InternalLogger.user(`$ ${input}`);
       setInput("");
       scrollToBottom();
     }

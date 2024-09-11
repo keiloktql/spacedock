@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Console from "@/components/Console";
 import { Button } from "@/shadcn/ui/Button";
+import LoggerService from "@/lib/LoggerService";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -26,14 +27,47 @@ type Story = StoryObj<typeof meta>;
 const CanvasWrapper: any = ({ children }: any) => {
   return (
     <div className="relative w-full h-screen bg-gray-100 p-4">
-      <div className="relative w-full h-full bg-white border border-gray-300">
-        <Button
-          onClick={() => {
-            console.log("pressed button!");
-          }}
-        >
-          Generate log
-        </Button>
+      <div className="relative flex space-y-4 flex-col w-full h-full bg-white border border-gray-300">
+        <span className="flex items-center space-x-2">
+          <Button
+            onClick={() => {
+              LoggerService.log("clicked log!");
+            }}
+          >
+            Generate log
+          </Button>
+          <p>Should generate "clicked log" message with `text-slate-400`</p>
+        </span>
+        <span className="flex items-center space-x-2">
+          <Button
+            onClick={() => {
+              LoggerService.info("clicked info!");
+            }}
+          >
+            Generate info
+          </Button>
+          <p>Should generate "clicked warn" message with `text-blue-400`</p>
+        </span>
+        <span className="flex items-center space-x-2">
+          <Button
+            onClick={() => {
+              LoggerService.error("clicked error!");
+            }}
+          >
+            Generate error
+          </Button>
+          <p>Should generate "clicked error" message with `text-red-400`</p>
+        </span>
+        <span className="flex items-center space-x-2">
+          <Button
+            onClick={() => {
+              LoggerService.warn("clicked warn!");
+            }}
+          >
+            Generate warn
+          </Button>
+          <p>Should generate "clicked warn" message with `text-yellow-400`</p>
+        </span>
       </div>
       {children}
     </div>

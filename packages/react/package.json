@@ -44,10 +44,12 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
     "@radix-ui/react-tooltip": "^1.1.2",
     "autoprefixer": "^10.4.20",
@@ -55,8 +57,10 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.429.0",
     "postcss": "^8.4.41",
+    "react-hook-form": "^7.53.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "tslib": "^2.6.3"
+    "tslib": "^2.6.3",
+    "zod": "^3.23.8"
   }
 }
