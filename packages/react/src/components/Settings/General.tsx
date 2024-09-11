@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { VERSION, PANOLOG_SETTINGS_FILTER_KEY } from "@/lib/config";
+import { VERSION } from "@/lib/config";
 import { Input } from "@/shadcn/ui/Input";
 import { Label } from "@/shadcn/ui/Label";
 import { Switch } from "@/shadcn/ui/Switch";
@@ -15,9 +15,7 @@ import {
 } from "@/shadcn/ui/Form";
 import { useToast } from "@/shadcn/ui/Toast/use-toast";
 import { Button } from "@/shadcn/ui/Button";
-import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import { useEffect } from "react";
-import LoggerService from "@/lib/LoggerService";
 import { useSettings } from "@/context/SettingsContext";
 
 type Props = {};

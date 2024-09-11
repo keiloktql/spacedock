@@ -1,6 +1,6 @@
 import eventEmitter from "@/lib/eventEmitter";
-import { WELCOME_MESSAGE } from "./messages";
-import { PANOLOG_ENGINE } from "./engine";
+import { WELCOME_MESSAGE } from "@/lib/messages";
+import { PANOLOG_ENGINE } from "@/lib/engine";
 
 export enum LogMethod {
   SYSTEM = "system",
