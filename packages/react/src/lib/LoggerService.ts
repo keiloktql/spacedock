@@ -39,6 +39,11 @@ export class InternalLogger {
   static getMessages(): LogMessage[] {
     return this.messages;
   }
+
+  static clearMessages() {
+    this.messages = [this.messages[0]];
+    eventEmitter.emit("new-log", this.messages); // Notify about the clearing of messages
+  }
 }
 
 // Public LoggerService class for npm distribution

@@ -1,4 +1,6 @@
-export const WELCOME_MESSAGE = `Welcome to Panolog!
+import { VERSION } from "@/lib/config";
+
+export const WELCOME_MESSAGE = `Welcome to Panolog ${VERSION}!
 Panolog is a browser-based shell with the Panolog CLI pre-installed.
 
 View supported Panolog commands via \`help\`

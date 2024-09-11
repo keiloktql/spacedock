@@ -1,8 +1,9 @@
+import { InternalLogger } from "@/lib/LoggerService";
 import {
   COMMAND_NOT_FOUND_MESSAGE,
   EXIT_MESSAGE,
   HELP_MESSAGE
-} from "./messages";
+} from "@/lib/messages";
 
 type CommandHandler = (args: string[]) => string | void;
 
@@ -43,6 +44,7 @@ class PANOLOG_CLI_ENGINE {
 
   private clear = (): void => {
     this.history = [];
+    InternalLogger.clearMessages(); // Clear log messages in the logger
     console.clear();
   };
 
