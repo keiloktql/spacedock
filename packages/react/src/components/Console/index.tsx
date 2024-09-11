@@ -17,7 +17,7 @@ const Console = (props: ConsoleProps) => {
 
   return (
     <SettingsProvider>
-      <div className="relative w-full h-full">
+      <div className="relative">
         <TooltipProvider delayDuration={100}>
           <Tooltip>
             <button

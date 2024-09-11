@@ -22,7 +22,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      LoggerService.systemMessage(`$ ${input}`);
+      LoggerService.user(`$ ${input}`);
       setInput("");
       scrollToBottom();
     }
@@ -51,7 +51,7 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
 
   return (
     <div
-      className="absolute bottom-10 w-full px-4 max-w-full min-h-20 max-h-40 h-full mx-auto"
+      className="absolute bottom-10 w-full px-4 max-w-full min-h-40 max-h-40 h-full mx-auto"
       onClick={handleTerminalClick}
     >
       <div className="bg-gray-800 shadow-lg shadow-slate-400 flex flex-col pt-2 px-4 h-full text-white rounded">

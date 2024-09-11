@@ -1,5 +1,6 @@
 import { LogMessage } from "@/lib/LoggerService";
-import React, { forwardRef } from "react";
+import { computeDisplayTextColor, showMethodOrNot } from "@/lib/utils";
+import { forwardRef } from "react";
 
 interface DisplayProps {
   messages: LogMessage[];
@@ -14,16 +15,16 @@ const Display = forwardRef<HTMLDivElement, DisplayProps>(
           return (
             <div
               key={index}
-              className={`text-xs font-mono ${msg.method === "error" ? "text-red-400" : ""}`}
+              className={`text-xs font-mono ${computeDisplayTextColor(msg.method)}`}
             >
               {lines.map((line, i) => (
                 <div className="h-[16px]" key={i}>
-                  {i === 0 && msg.method && (
+                  {i === 0 && showMethodOrNot(msg.method) && (
                     <strong>{msg.method?.toUpperCase()}: </strong>
                   )}
-                  {i > 0 && msg.method !== undefined && (
-                    <span className="ml-4"></span>
-                  )}
+                  {i > 0 &&
+                    msg.method !== undefined &&
+                    msg.method !== "system" && <span className="ml-4"></span>}
                   {line}
                 </div>
               ))}

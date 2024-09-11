@@ -20,15 +20,3 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #888; /* Color of the scrollbar handle on hover */
 }
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

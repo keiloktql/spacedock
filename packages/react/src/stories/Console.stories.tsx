@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Console from "@/components/Console";
-import LoggerService from "@/lib/LoggerService";
+import { Button } from "@/shadcn/ui/Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -24,19 +24,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const CanvasWrapper: any = ({ children }: any) => {
-  LoggerService.log("This should run.");
   return (
     <div className="relative w-full h-screen bg-gray-100 p-4">
       <div className="relative w-full h-full bg-white border border-gray-300">
-        <button
+        <Button
           onClick={() => {
             console.log("pressed button!");
           }}
         >
           Generate log
-        </button>
-        {children}
+        </Button>
       </div>
+      {children}
     </div>
   );
 };
