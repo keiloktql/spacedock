@@ -1,9 +1,6 @@
+import { useSettings } from "@/context/SettingsContext";
 import { InternalLogger } from "@/lib/LoggerService";
-import {
-  COMMAND_NOT_FOUND_MESSAGE,
-  EXIT_MESSAGE,
-  HELP_MESSAGE
-} from "@/lib/messages";
+import { COMMAND_NOT_FOUND_MESSAGE, HELP_MESSAGE } from "@/lib/messages";
 
 type CommandHandler = (args: string[]) => string | void;
 
@@ -20,8 +17,7 @@ class PANOLOG_CLI_ENGINE {
   constructor() {
     this.commands = {
       help: this.help,
-      clear: this.clear,
-      exit: this.exit
+      clear: this.clear
     };
     this.history = [];
   }
@@ -46,10 +42,6 @@ class PANOLOG_CLI_ENGINE {
     this.history = [];
     InternalLogger.clearMessages(); // Clear log messages in the logger
     console.clear();
-  };
-
-  private exit = (): string => {
-    return EXIT_MESSAGE;
   };
 
   // This function could be used to list the history of commands

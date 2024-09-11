@@ -3,19 +3,19 @@ import Header from "@/components/Console/Header";
 import Display from "@/components/Console/Display";
 import useLogger from "@/hooks/useLogger";
 import LoggerService, { InternalLogger } from "@/lib/LoggerService";
+import { useSettings } from "@/context/SettingsContext";
 
 interface TerminalProps {
-  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
   input: string;
   setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
+const Terminal = ({ input, setInput }: TerminalProps) => {
+  const { visible } = useSettings();
   const { messages } = useLogger();
   const displayRef = useRef<HTMLDivElement | null>(null);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
   };
@@ -48,14 +48,16 @@ const Terminal = ({ setIsVisible, input, setInput }: TerminalProps) => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
+  if (!visible) {
+    return null;
+  }
   return (
     <div
       className="absolute bottom-10 w-full px-4 max-w-full min-h-40 max-h-40 h-full mx-auto"
       onClick={handleTerminalClick}
     >
       <div className="bg-gray-800 shadow-lg shadow-slate-400 flex flex-col pt-2 px-4 h-full text-white rounded">
-        <Header setIsVisible={setIsVisible} />
+        <Header />
         <span
           ref={terminalRef}
           className="custom-scrollbar flex-col overflow-y-auto relative pb-24"

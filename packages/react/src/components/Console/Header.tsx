@@ -13,12 +13,12 @@ import {
 import Settings from "@/components/Settings";
 import { PANOLOG_DOC_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import { useSettings } from "@/context/SettingsContext";
 
-interface HeaderProps {
-  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-}
+interface HeaderProps {}
 
-const Header = ({ setIsVisible }: HeaderProps) => {
+const Header = ({}: HeaderProps) => {
+  const { visible, setVisible } = useSettings();
   return (
     <div className="w-full flex justify-between items-center">
       <p className="w-full text-xs font-semibold text-slate-300">Panalog</p>
@@ -75,7 +75,7 @@ const Header = ({ setIsVisible }: HeaderProps) => {
           <Button
             variant="ghost"
             className="text-slate-300 hover:text-slate-500"
-            onClick={() => setIsVisible((visibility) => !visibility)}
+            onClick={() => setVisible((visibility) => !visibility)}
             size="smIcon"
           >
             <TooltipTrigger asChild>

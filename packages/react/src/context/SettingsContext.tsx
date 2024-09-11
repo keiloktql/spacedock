@@ -15,11 +15,13 @@ type Theme = "light" | "dark";
 
 interface SettingsContextType {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
   pathname: string;
   setPathname: (pathname: string) => void;
   filters: Record<string, boolean>;
   setFilters: (filters: Record<string, boolean>) => void;
+  visible: boolean;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(
@@ -55,6 +57,7 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
           info: true
         };
   });
+  const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
     setLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY, filters);
@@ -62,7 +65,16 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <SettingsContext.Provider
-      value={{ theme, setTheme, pathname, setPathname, filters, setFilters }}
+      value={{
+        theme,
+        setTheme,
+        pathname,
+        setPathname,
+        filters,
+        setFilters,
+        visible,
+        setVisible
+      }}
     >
       {children}
     </SettingsContext.Provider>

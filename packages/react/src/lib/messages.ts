@@ -14,9 +14,4 @@ export const HELP_MESSAGE = `
 Available commands:
 - help: Shows this help message
 - clear: Clears the shell
-- exit: Exits the shell
-`;
-
-export const EXIT_MESSAGE = `
-Exiting shell...
 `;
