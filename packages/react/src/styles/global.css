@@ -20,3 +20,13 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #888; /* Color of the scrollbar handle on hover */
 }
+
+/* Dark mode styles */
+body {
+  @apply bg-white text-slate-800;
+}
+
+/* Light mode styles */
+.dark body {
+  @apply bg-slate-800 text-white;
+}

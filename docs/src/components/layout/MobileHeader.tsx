@@ -25,7 +25,7 @@ const MobileHeader = () => {
             className={`text-slate-950 ${isActiveLink("/") ? "" : "opacity-60"} hover:underline hover:opacity-80 text-sm`}
             href="/"
           >
-            <SheetTitle>Panolog</SheetTitle>
+            <SheetTitle>SpaceDock</SheetTitle>
           </Link>
           <Link
             className={`text-slate-950 ${isActiveLink("/docs") ? "" : "opacity-60"} hover:underline hover:opacity-80 text-sm`}

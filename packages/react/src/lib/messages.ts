@@ -1,9 +1,9 @@
 import { VERSION } from "@/lib/config";
 
-export const WELCOME_MESSAGE = `Welcome to Panolog ${VERSION}!
-Panolog is a browser-based shell with the Panolog CLI pre-installed.
+export const WELCOME_MESSAGE = `Welcome to SpaceDock ${VERSION}!
+SpaceDock is a browser-based shell with the SpaceDock CLI pre-installed.
 
-View supported Panolog commands via \`help\`
+View supported SpaceDock commands via \`help\`
 `;
 
 export const COMMAND_NOT_FOUND_MESSAGE = (command?: string) => `

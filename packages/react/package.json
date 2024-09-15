@@ -1,7 +1,7 @@
 {
-  "name": "@panolog/react",
+  "name": "@spacedock/react",
   "version": "0.0.1",
-  "description": "The Panoramic View for Your Logs.",
+  "description": "A station for your logs, docking out of sight when not needed.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

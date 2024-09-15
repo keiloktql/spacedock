@@ -1,6 +1,6 @@
 import {
-  PANOLOG_SETTINGS_FILTER_KEY,
-  PANOLOG_SETTINGS_THEME_KEY
+  SPACEDOCK_SETTINGS_FILTER_KEY,
+  SPACEDOCK_SETTINGS_THEME_KEY
 } from "@/lib/config";
 import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import React, {
@@ -39,13 +39,13 @@ export const useSettings = () => {
 export const SettingsProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const storedTheme = getLocalStorageItem(
-      PANOLOG_SETTINGS_THEME_KEY
+      SPACEDOCK_SETTINGS_THEME_KEY
     ) as Theme | null;
     return storedTheme ? JSON.parse(storedTheme) : "dark"; // Default to "dark" if no stored value
   });
   const [pathname, setPathname] = useState("general");
   const [filters, setFilters] = useState<Record<string, boolean>>(() => {
-    const storedFilters = getLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY);
+    const storedFilters = getLocalStorageItem(SPACEDOCK_SETTINGS_FILTER_KEY);
     return storedFilters
       ? { system: true, user: true, ...JSON.parse(storedFilters) }
       : {
@@ -60,11 +60,11 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    setLocalStorageItem(PANOLOG_SETTINGS_FILTER_KEY, filters);
+    setLocalStorageItem(SPACEDOCK_SETTINGS_FILTER_KEY, filters);
   }, [filters]);
 
   useEffect(() => {
-    setLocalStorageItem(PANOLOG_SETTINGS_THEME_KEY, theme);
+    setLocalStorageItem(SPACEDOCK_SETTINGS_THEME_KEY, theme);
   }, [theme]);
 
   return (

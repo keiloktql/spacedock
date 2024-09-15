@@ -1,13 +1,13 @@
-# Panolog
+# SpaceDock
 
 > This project is still in development. Not production friendly.
 
-A better and wider way to console.log. **Panolog** is a versatile logging tool designed to enhance your debugging and monitoring experience with a variety of customizable and advanced features. Currently available on React based projects only.
+A better and wider way to console.log. **SpaceDock** is a versatile logging tool designed to enhance your debugging and monitoring experience with a variety of customizable and advanced features. Currently available on React based projects only.
 
 ## Installation
 
 ```
-$ npm i -D @panolog/react
+$ npm i -D @spacedock/react
 ```
 
 ## Features
@@ -26,14 +26,14 @@ $ npm i -D @panolog/react
 
 ## Documentation
 
-For detailed documentation on how to use Panolog, including setup instructions, API references, and user guides, please visit [Panolog Documentation](https://panolog.netlify.app/docs).
+For detailed documentation on how to use SpaceDock, including setup instructions, API references, and user guides, please visit [SpaceDock Documentation](https://spacedock.vercel.app/docs).
 
 ## Contributors
 
-We welcome contributions from the community! If you'd like to contribute to Panolog, please follow our [contributing guidelines](https://github.com/keiloktql/panolog/blob/main/CONTRIBUTING.md).
+We welcome contributions from the community! If you'd like to contribute to SpaceDock, please follow our [contributing guidelines](https://github.com/keiloktql/spacedock/blob/main/CONTRIBUTING.md).
 
-<a href="https://github.com/keiloktql/panolog/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=keiloktql/panolog" />
+<a href="https://github.com/keiloktql/spacedock/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=keiloktql/spacedock" />
 </a>
 
 **Core Team:**
@@ -42,4 +42,4 @@ We welcome contributions from the community! If you'd like to contribute to Pano
 
 ## License
 
-Panolog is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+SpaceDock is licensed under the [MIT License](https://opensource.org/licenses/MIT).

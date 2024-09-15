@@ -36,7 +36,7 @@ const General = (props: Props) => {
   });
 
   const onSubmit = (data: z.infer<typeof FilterFormSchema>) => {
-    setFilters(data);
+    setFilters({ system: true, user: true, ...data });
     filterForm.reset(data);
     toast({
       title: "You submitted the following values:",

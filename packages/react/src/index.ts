@@ -1,4 +1,7 @@
-import Console from "@/components/Console";
+import SpaceDock from "@/components/Console";
+import LoggerService from "@/lib/LoggerService";
 import "@/styles/global.css";
 
-export default Console;
+export default SpaceDock;
+
+export { LoggerService };

@@ -1,6 +1,6 @@
 import eventEmitter from "@/lib/eventEmitter";
 import { WELCOME_MESSAGE } from "@/lib/messages";
-import { PANOLOG_ENGINE } from "@/lib/engine";
+import { SPACEDOCK_ENGINE } from "@/lib/engine";
 
 export enum LogMethod {
   SYSTEM = "system",
@@ -31,7 +31,7 @@ export class InternalLogger {
     const logMessage: LogMessage = { method: LogMethod.USER, message };
     this.messages.push(logMessage);
     console.log(message);
-    const systemMessage = PANOLOG_ENGINE.runCommand(message);
+    const systemMessage = SPACEDOCK_ENGINE.runCommand(message);
     this.system(systemMessage);
     eventEmitter.emit("new-log", this.messages);
   }

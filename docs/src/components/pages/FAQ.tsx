@@ -87,7 +87,7 @@ const FAQ: React.FC = () => {
 
   return (
     <MainLayout
-      title="FAQ - Panolog"
+      title="FAQ - SpaceDock"
       className="mx-auto pb-20 pt-20 flex flex-col h-full w-full max-w-screen-xl px-6 sm:px-16"
     >
       <h1 className="text-xl font-bold">Frequently Asked Questions</h1>

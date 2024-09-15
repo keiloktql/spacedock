@@ -18,10 +18,10 @@ const SEO = ({ title = "Panalog" }) => (
     />
     <meta
       property="og:image"
-      content="https://panolog.netlify.app/android-chrome-192x192.png"
+      content="https://spacedock.vercel.app/android-chrome-192x192.png"
     />
-    <meta property="og:url" content="https://panolog.netlify.app/" />
-    <meta property="og:site_name" content="Panolog" />
+    <meta property="og:url" content="https://spacedock.vercel.app/" />
+    <meta property="og:site_name" content="SpaceDock" />
   </Head>
 );
 

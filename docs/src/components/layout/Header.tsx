@@ -20,7 +20,7 @@ const Header = () => (
             width={30}
             height={30}
           />
-          <p>Panolog</p>
+          <p>SpaceDock</p>
         </Link>
       </div>
       <MobileHeader />

@@ -4,13 +4,13 @@ import { COMMAND_NOT_FOUND_MESSAGE, HELP_MESSAGE } from "@/lib/messages";
 
 type CommandHandler = (args: string[]) => string | void;
 
-interface PanologCLIEngine {
+interface SpaceDockCLIEngine {
   commands: { [key: string]: CommandHandler };
   input: string;
   history: string[];
 }
 
-class PANOLOG_CLI_ENGINE {
+class SPACEDOCK_CLI_ENGINE {
   private commands: { [key: string]: CommandHandler };
   private history: string[];
 
@@ -50,4 +50,4 @@ class PANOLOG_CLI_ENGINE {
   }
 }
 
-export const PANOLOG_ENGINE = new PANOLOG_CLI_ENGINE();
+export const SPACEDOCK_ENGINE = new SPACEDOCK_CLI_ENGINE();

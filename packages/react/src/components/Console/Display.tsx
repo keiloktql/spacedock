@@ -13,6 +13,7 @@ const Display = forwardRef<HTMLDivElement, DisplayProps>(
     const filteredMessages = messages.filter(
       (msg) => filters[msg.method as keyof typeof filters]
     );
+    console.log(filters);
     return (
       <div className="flex flex-col" ref={ref}>
         {filteredMessages.map((msg, index) => {

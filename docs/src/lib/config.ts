@@ -7,7 +7,7 @@ interface IHostUrl {
 
 export const ENVIRONMENT: ENVIRONMENT_TYPE =
   process.env.NEXT_PUBLIC_ENVIRONMENT === "DEV" ? "DEV" : "PROD";
-export const PROD_HOST_URL: string = "https://panolog.netlify.app";
+export const PROD_HOST_URL: string = "https://spacedock.vercel.app";
 
 const HOST_URLS: IHostUrl = {
   PROD: PROD_HOST_URL,

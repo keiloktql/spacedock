@@ -7,18 +7,17 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogTitle,
   DialogTrigger
 } from "@/shadcn/ui/Dialog";
 import Settings from "@/components/Settings";
-import { PANOLOG_DOC_URL } from "@/lib/config";
+import { SPACEDOCK_DOC_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { useSettings } from "@/context/SettingsContext";
 
 interface HeaderProps {}
 
 const Header = ({}: HeaderProps) => {
-  const { visible, setVisible } = useSettings();
+  const { setVisible } = useSettings();
   return (
     <div className="w-full flex justify-between items-center">
       <p className="w-full text-xs font-semibold text-slate-300">Panalog</p>
@@ -32,7 +31,7 @@ const Header = ({}: HeaderProps) => {
                 className: "text-slate-300 hover:text-slate-500"
               })
             )}
-            href={PANOLOG_DOC_URL}
+            href={SPACEDOCK_DOC_URL}
             rel="noopener noreferrer"
             target="_blank"
           >

@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from "@/shadcn/ui/Tooltip";
+import { useEffect, useState } from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/ui/Tooltip";
 import { Terminal as TerminalIcon } from "lucide-react";
 import Terminal from "@/components/Console/Terminal";
 import { useSettings } from "@/context/SettingsContext";
 import Providers from "../Providers";
+import useTheme from "@/hooks/useTheme";
 
 interface ConsoleProps {}
 
 const ConsoleContent = (props: ConsoleProps) => {
   const [input, setInput] = useState("");
   const { visible, setVisible } = useSettings();
+  useTheme();
 
   return (
     <div className="relative">
@@ -37,10 +34,10 @@ const ConsoleContent = (props: ConsoleProps) => {
   );
 };
 
-const Console = () => (
+const SpaceDockConsole = () => (
   <Providers>
     <ConsoleContent />
   </Providers>
 );
 
-export default Console;
+export default SpaceDockConsole;
