@@ -1,4 +1,3 @@
-import { useSettings } from "@/context/SettingsContext";
 import { InternalLogger } from "@/lib/LoggerService";
 import { COMMAND_NOT_FOUND_MESSAGE, HELP_MESSAGE } from "@/lib/messages";
 
