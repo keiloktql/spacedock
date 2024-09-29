@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/ui/Tooltip";
 import { Terminal as TerminalIcon } from "lucide-react";
 import Terminal from "@/components/Console/Terminal";
