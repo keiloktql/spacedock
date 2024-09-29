@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
-const SEO = ({ title = "Panalog" }) => (
+const SEO = ({ title = "SpaceDock" }) => (
   <Head>
     <meta charSet="utf-8" />
     <title>{title}</title>
@@ -10,11 +10,11 @@ const SEO = ({ title = "Panalog" }) => (
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Panalog - The Panoramic View for Your Logs."
+      content="SpaceDock - The Panoramic View for Your Logs."
     />
     <meta
       property="og:description"
-      content="Panalog revolutionizes the debugging experience"
+      content="SpaceDock revolutionizes the debugging experience"
     />
     <meta
       property="og:image"

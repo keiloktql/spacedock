@@ -2,7 +2,6 @@ import { Button, buttonVariants } from "@/shadcn/ui/Button";
 import { Separator } from "@/shadcn/ui/Separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shadcn/ui/Tooltip";
 import { BookOpenText, Settings as SettingsIcon, X } from "lucide-react";
-import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -20,7 +19,7 @@ const Header = ({}: HeaderProps) => {
   const { setVisible } = useSettings();
   return (
     <div className="w-full flex justify-between items-center">
-      <p className="w-full text-xs font-semibold text-slate-300">Panalog</p>
+      <p className="w-full text-xs font-semibold text-slate-300">SpaceDock</p>
       <span className="flex justify-end items-center w-full h-5">
         <Tooltip>
           <a

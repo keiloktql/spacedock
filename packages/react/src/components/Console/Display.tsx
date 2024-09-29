@@ -13,7 +13,6 @@ const Display = forwardRef<HTMLDivElement, DisplayProps>(
     const filteredMessages = messages.filter(
       (msg) => filters[msg.method as keyof typeof filters]
     );
-    console.log(filters);
     return (
       <div className="flex flex-col" ref={ref}>
         {filteredMessages.map((msg, index) => {
@@ -21,10 +20,10 @@ const Display = forwardRef<HTMLDivElement, DisplayProps>(
           return (
             <div
               key={index}
-              className={`text-xs font-mono ${computeDisplayTextColor(msg.method)}`}
+              className={`text-xs font-mono h-full ${computeDisplayTextColor(msg.method)}`}
             >
               {lines.map((line, i) => (
-                <div className="h-[16px]" key={i}>
+                <div className="min-h-[16px] h-full" key={i}>
                   {i === 0 && showMethodOrNot(msg.method) && (
                     <strong>{msg.method?.toUpperCase()}: </strong>
                   )}

@@ -45,7 +45,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               <TooltipTrigger asChild>
                 <Copy className="h-8 w-8 p-2 text-slate-500" />
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent side="left">
                 <p className="text-xs">Copy to Clipboard</p>
               </TooltipContent>
             </button>

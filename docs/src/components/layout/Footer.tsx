@@ -21,7 +21,7 @@ const Footer = () => (
             width={30}
             height={30}
           />
-          <p>Panalog</p>
+          <p>SpaceDock</p>
         </Link>
         <p className="mt-2 text-gray-500 text-xs lg:whitespace-nowrap">
           The Panoramic View for Your Logs.

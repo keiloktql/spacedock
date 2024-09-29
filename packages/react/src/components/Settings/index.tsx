@@ -10,11 +10,11 @@ const sidebarNavItems = [
   {
     title: "General",
     href: "general"
-  },
-  {
-    title: "Display",
-    href: "display"
   }
+  // {
+  //   title: "Display",
+  //   href: "display"
+  // }
 ];
 
 interface SettingsLayoutProps {}
@@ -23,9 +23,9 @@ export default function Settings({}: SettingsLayoutProps) {
   const { pathname, setPathname } = useSettings();
 
   const renderSettingsContent = () => {
-    if (pathname === "display") {
-      return <Display />;
-    }
+    // if (pathname === "display") {
+    //   return <Display />;
+    // }
     return <General />;
   };
 

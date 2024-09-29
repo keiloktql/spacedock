@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Console from "@/components/Console";
+import SpaceDock from "@/components/Console";
 import { Button } from "@/shadcn/ui/Button";
 import LoggerService from "@/lib/LoggerService";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Console",
-  component: Console,
+  title: "SpaceDock",
+  component: SpaceDock,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "fullscreen"
@@ -15,11 +15,12 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" }
+    hideConsole: { control: "boolean" },
+    hideBrowserLogs: { control: "boolean" }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {}
-} satisfies Meta<typeof Console>;
+} satisfies Meta<typeof SpaceDock>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -78,7 +79,7 @@ export const Default: Story = {
   render: () => {
     return (
       <CanvasWrapper>
-        <Console />
+        <SpaceDock hideBrowserLogs />
       </CanvasWrapper>
     );
   }

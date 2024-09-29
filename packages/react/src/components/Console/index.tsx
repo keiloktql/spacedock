@@ -6,37 +6,54 @@ import { useSettings } from "@/context/SettingsContext";
 import Providers from "../Providers";
 import useTheme from "@/hooks/useTheme";
 
-interface ConsoleProps {}
+interface ConsoleProps {
+  hideConsole?: boolean;
+  hideBrowserLogs?: boolean;
+}
 
-const ConsoleContent = (props: ConsoleProps) => {
+const ConsoleContent = ({
+  hideConsole = false,
+  hideBrowserLogs = false
+}: ConsoleProps) => {
   const [input, setInput] = useState("");
   const { visible, setVisible } = useSettings();
   useTheme();
 
+  if (hideBrowserLogs) {
+    console.log = () => {};
+    console.info = () => {};
+    console.warn = () => {};
+    console.error = () => {};
+  }
+
   return (
     <div className="relative">
-      <Tooltip>
-        <button
-          onClick={() => setVisible(!visible)}
-          className="absolute bottom-10 right-4 p-2 rounded shadow-sm shadow-slate-400 hover:opacity-75 text-slate-800"
-        >
-          <TooltipTrigger asChild>
-            <TerminalIcon className="w-4 h-4" />
-          </TooltipTrigger>
-          <TooltipContent side="left">
-            <p className="text-xs">Open terminal</p>
-          </TooltipContent>
-        </button>
-      </Tooltip>
+      {!hideConsole && (
+        <>
+          <Tooltip>
+            <button
+              onClick={() => setVisible(!visible)}
+              className="absolute bottom-10 right-4 p-2 rounded shadow-sm shadow-slate-400 hover:opacity-75 text-slate-800"
+            >
+              <TooltipTrigger asChild>
+                <TerminalIcon className="w-4 h-4" />
+              </TooltipTrigger>
+              <TooltipContent side="left">
+                <p className="text-xs">Open terminal</p>
+              </TooltipContent>
+            </button>
+          </Tooltip>
 
-      <Terminal input={input} setInput={setInput} />
+          <Terminal input={input} setInput={setInput} />
+        </>
+      )}
     </div>
   );
 };
 
-const SpaceDockConsole = () => (
+const SpaceDockConsole = (props: ConsoleProps) => (
   <Providers>
-    <ConsoleContent />
+    <ConsoleContent {...props} />
   </Providers>
 );
 
